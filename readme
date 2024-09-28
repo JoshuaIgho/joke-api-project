@@ -1,0 +1,41 @@
+#Joke API Web Application
+This project is a simple web application built using Express.js and Axios to fetch jokes from the JokeAPI based on user preferences. The application accepts user input for joke preferences like language, type, and amount, and returns a set of jokes from the API.
+
+#Features
+Fetch jokes from the JokeAPI using user-specified options (language, type, amount, and ID range).
+Display jokes in an EJS-rendered view.
+Handles errors gracefully with proper error messages.
+
+#Prerequisites
+Before running this project, make sure you have:
+
+Node.js installed (version 14.x or higher).
+npm (Node Package Manager) installed.
+
+#Installation
+Install dependencies:Run the following command to install required packages :
+npm install
+
+Run the server: Start the Express.js server:
+nodemone app.js or node app.js
+Access the app: Open your browser and go to http://localhost:3000 to access the web app.
+
+#Form Input:
+Select the language of the jokes.
+Choose the type of joke (programming, dark, pun, etc.).
+Specify the number of jokes (amount).
+Optionally, provide an ID range for specific jokes.
+View Jokes: After submitting the form, the server will fetch the jokes from the JokeAPI, and the results will be displayed on the jokes page.
+
+#Endpoints
+GET /: Renders the form page where users can input their joke preferences.
+POST /get-jokes: Handles form submission and fetches jokes from the JokeAPI based on the user's input.
+Technologies Used
+Express.js: For building the server and handling routes.
+Axios: For making API requests to the JokeAPI.
+EJS: For rendering views and displaying jokes.
+Bootstrap: (Optional) for styling the front-end.
+Error Handling
+In case of an error (e.g., JokeAPI request fails), the server responds with a 500 status and a generic error message indicating that an error occurred while fetching jokes.
+
+

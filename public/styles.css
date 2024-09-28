@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+body{
+    background-color: #1f2029 !important; 
+	font-family: 'Poppins', sans-serif !important; 
+	font-weight: 300 !important; 
+	font-size: 15px !important;
+	line-height: 1.7 !important;
+	color: #c4c3ca !important;
+	overflow-x: hidden !important;
+    height: 100% !important;
+}
+
+h6 span, h4{
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-3d-wrap {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  margin-top: 60px;
+}
+
+/* the other side of toggle */
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position:absolute;    
+  top: 0;
+  left: 0;  
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out; 
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #2a2b38;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.center-wrap{
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 35px) perspective(100px);  
+  z-index: 20;
+  display: block;
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(188deg 3% 83%);
+}
+
+
+
+/* Container for the toggle */
+.checkbox__container {
+    position: relative;
+    width: 120px;
+    height: 60px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, hsl(39, 100%, 80%), hsl(300, 47%, 85%));
+    box-shadow: 0px 1.9px 3.2px rgba(0, 0, 0, 0.25);
+    margin: 20px auto;
+}
+
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+    display: none;
+}
+ 
+
+/* The label that will trigger the toggle */
+.label-for-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: background 0.4s ease;
+}
+
+/* The moving ball */
+.ball {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3ddbd9, #8da2ec, #fe95ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.ball i:hover{
+    color: rgb(224, 181, 181);
+    transition-duration: 0.4s ease ;
+    
+}
+
+/* Ball icon */
+.ball i {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+/* Toggle switch on state */
+input:checked + .label-for-toggle .ball {
+    transform: translateX(60px);
+}  
+
+/* Form Inputs and Selects */
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3b3c4f;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Placeholder Text Color */
+form input::placeholder, form select:disabled {
+    color: #c4c3ca;
+}
+
+/* Input & Select Hover & Focus States */
+form input:focus, form select:focus, form input:hover, form select:hover {
+    background-color: #494a5e;
+    outline: none;
+}
+button{
+    border: 1px solid gray;
+    color: white;
+    background: transparent;
+}
+button:hover{
+    background: linear-gradient(135deg, #414f4f, #464e68, #7a5e7a);
+}
+.instructions-wrapper {
+    height: 300px; /* Set the height of the visible area */
+    overflow: hidden; /* Hide the overflow */
+    position: relative; /* Position relative for the inner element */
+}
+
+.instructions {
+    position: absolute; /* Position absolute for smooth scrolling */
+    width: 100%; /* Full width */
+    animation: scroll 50s linear infinite; /* Animation for scrolling */
+}
+.toggle{
+    color: green;
+}
+ul.nav a i {
+    color: white;
+  }
+  
+  ul.nav a:hover i {
+    color: #ddd; /* Optional: Change icon color on hover */
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: white;
+    background: transparent;
+  }
+ 
+@keyframes scroll {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    100% {
+        transform: translateY(-100%); /* End position */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { 
+    body{
+        height: 100%;
+    }
+    .card-3d-wrap {
+       width: 100%;
+    }
+    .instructions {
+        animation: scroll 15s linear infinite; /* Speed up scrolling for mobile */
+    }
+}
+
+
+
+
+
